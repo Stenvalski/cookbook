@@ -1,0 +1,97 @@
+html{
+    font-size: 15px;
+}
+
+body{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0  ;
+    background-color: black;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: .5rem;
+    background-color: #000;
+    align-items: center;
+
+}
+
+.item {
+    background-color: #000;
+    color: white;
+    padding: .5rem;   
+}
+
+.item-a {  
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+
+li{
+    margin: 1.5rem 0;
+}
+
+.ingredients, .instructions {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: #ddd;
+}
+
+.ingredients h2, .instructions h2{
+    font-size: 2.2rem;
+    color: #fff;
+}
+
+@media screen and (max-width:400px){
+    .ingredients, .instructions{
+        font-size: 1rem;
+    }
+    .ingredients h2, .instructions h2{
+        font-size: 1.5rem;
+    }
+}
+
+
+.pic {
+    display: block;
+    margin: 1rem auto;
+    position: relative;
+
+}
+
+.pic img{
+    max-width: 100%;
+    max-height: 100vh;
+}
+
+.pic p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.466);
+    padding: 1rem;
+    margin: 0;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 700px) {
+    .pic p{font-size: 2rem;}
+}
+
+
+.item .pic{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+
+.space{
+    height: 40px;
+}
