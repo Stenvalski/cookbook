@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Recipe</title>
+    <link rel="stylesheet" href="cookbook_style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="cookbook-images/cooking_128.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #444;
+            color: white;
+            font-size: 1rem;
+        }
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #generatedHtmlContainer {
+            margin-top: 30px;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        #generatedHtml {
+            white-space: pre-wrap;
+            word-break: break-all;
+            font-family: monospace;
+            background-color: #111;
+            padding: 15px;
+            border-radius: 4px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .image-input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .image-input-group input {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+        .image-input-group button {
+            flex-shrink: 0;
+            padding: 8px 12px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create New Recipe</h1>
+
+        <div class="form-group">
+            <label for="recipeTitle">Recipe Title:</label>
+            <input type="text" id="recipeTitle" placeholder="e.g., Delicious Chicken Curry">
+        </div>
+
+        <div class="form-group">
+            <label for="recipeFilename">Recipe Filename:</label>
+            <input type="text" id="recipeFilename" placeholder="e.g., my-new-recipe.html">
+        </div>
+
+        <div class="form-group">
+            <label for="imageUpload">Upload Images:</label>
+            <input type="file" id="imageUpload" multiple accept="image/*">
+        </div>
+
+        <div class="form-group">
+            <label for="ingredients">Ingredients (one per line):</label>
+            <textarea id="ingredients" placeholder="e.g.,
+2 tbsp. olive oil
+1 onion, chopped
+..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="instructions">Instructions (one per line for each step):</label>
+            <textarea id="instructions" placeholder="e.g.,
+1. Heat oil in a pan.
+2. Add onion and cook.
+..."></textarea>
+        </div>
+
+        <button id="generateHtml">Generate Recipe HTML</button>
+
+        <div id="generatedHtmlContainer">
+            <h2>Generated HTML:</h2>
+            <pre id="generatedHtml"></pre>
+            <button id="copyHtml">Copy HTML</button>
+            <button id="saveRecipe">Save Recipe</button>
+        </div>
+
+        <div id="generatedMenuContainer">
+            <h2>Generated Menu Item:</h2>
+            <pre id="generatedMenuItem"></pre>
+            <button id="copyMenuItem">Copy Menu Item</button>
+        </div>
+    </div>
+
+    <script src="createRecipe.js"></script>
+</body>
+</html>
