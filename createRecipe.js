@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </head>
 <body>
 
-    <a href="CookbookMenu.html">
+    <a href="index.html">
         <div class="menu">
             <div></div>
             <div></div>

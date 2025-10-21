@@ -56,7 +56,7 @@ app.post('/update-menu', (req, res) => {
         return res.status(400).send('Menu item HTML is required.');
     }
 
-    const menuFilePath = path.join(__dirname, 'cookbookMenu.html');
+    const menuFilePath = path.join(__dirname, 'index.html');
 
     fs.readFile(menuFilePath, 'utf8', (err, data) => {
         if (err) {
